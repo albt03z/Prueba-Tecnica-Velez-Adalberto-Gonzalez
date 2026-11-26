@@ -1,0 +1,13 @@
+# Entorno virtual
+.venv/
+
+# Archivos generados por Python y pytest
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Base de datos local
+*.db
+
+# Secretos
+.env
