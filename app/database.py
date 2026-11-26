@@ -31,7 +31,14 @@ def crear_tabla() -> None:
 
 
 def insertar(solicitud: dict) -> None:
-    """Lanza sqlite3.IntegrityError si el id ya existe."""
+    """Inserta una solicitud en la base de datos.
+
+    Args:
+        solicitud: Diccionario con los campos de la tabla solicitudes.
+
+    Raises:
+        sqlite3.IntegrityError: Si el id ya existe.
+    """
     with closing(conectar()) as conexion, conexion:
         conexion.execute(
             """
@@ -45,7 +52,15 @@ def insertar(solicitud: dict) -> None:
 
 
 def listar(estado: str | None = None, prioridad: str | None = None) -> list[dict]:
-    """Devuelve las solicitudes (filtradas si se indica) ordenadas por fecha e id."""
+    """Consulta las solicitudes, con filtros opcionales.
+
+    Args:
+        estado: Filtra por estado si se indica.
+        prioridad: Filtra por prioridad si se indica.
+
+    Returns:
+        Lista de diccionarios ordenada por fecha de creación e id.
+    """
     consulta = "SELECT * FROM solicitudes WHERE 1 = 1"
     parametros: list[str] = []
 
