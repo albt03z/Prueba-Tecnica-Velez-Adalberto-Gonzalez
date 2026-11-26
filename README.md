@@ -11,7 +11,6 @@ API REST construida con **FastAPI** y **SQLite** para registrar y consultar soli
 ```bash
 python -m venv .venv
 .venv\Scripts\activate        # Windows
-# source .venv/bin/activate   # Linux / macOS
 pip install -r requirements.txt
 ```
 
@@ -40,7 +39,7 @@ La base de datos se guarda en `inventario.db` y se crea sola al iniciar. Para ca
 ```json
 {
   "id": 1,
-  "tienda": "Tienda Centro",
+  "tienda": "Tienda Velez",
   "tipo": "Producto averiado",
   "descripcion": "Caja dañada",
   "prioridad": "Alta"
